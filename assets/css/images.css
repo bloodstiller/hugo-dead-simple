@@ -12,16 +12,15 @@ img {
   margin: 0.8em 0;
   animation-duration: 1s;
   animation-name: images;
+  max-width: 100%;
 }
 
 .imgp {
-  margin: auto;
-  text-align: center;
+  margin: 0;
 }
 
 figure {
-  margin: auto;
-  text-align: center;
+  margin: 0;
 }
 
 .imgp img,
@@ -33,12 +32,13 @@ figure img
 figcaption {
   color: var(--text-dim);
   font-size: 0.96rem;
-  text-align: center;
+  text-align: left;
 }
 
 figcaption h4 {
   margin-top: 0px;
   font-weight: normal;
+  text-align: left;
 }
 
 img,

@@ -96,3 +96,18 @@
   margin-bottom: 0.5em;
   font-weight: normal;
 }
+
+
+/**************
+  Custom for inbetween + + symbols
+***************/
+span.underline-bold {
+    color: #FF3D2B !important;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-shadow:
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black; /* Shadow color and position */
+}

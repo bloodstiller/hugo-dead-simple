@@ -90,9 +90,9 @@
   setTimeout(scrollHandler, 100);
 </script>
 
+<!-- Copy code button -->
 <script defer>
   function addCopyButtonToCodeBlocks() {
-    // Get all code blocks with a class of "language-*"
     const codeBlocks = document.querySelectorAll('code[class^="language-"]');
 
     codeBlocks.forEach((codeBlock) => {
@@ -100,9 +100,7 @@
       copyButton.classList.add("copy-code-button");
       copyButton.innerHTML = "copy";
 
-      // Add a click event listener to the copy button
       copyButton.addEventListener("click", () => {
-        // Copy the code inside the code block to the clipboard
         const elements = codeBlock.querySelectorAll(".cl");
         let codeToCopy = "";
         elements.forEach((element) => {
@@ -110,18 +108,47 @@
         });
         navigator.clipboard.writeText(codeToCopy);
 
-        // Update the copy button text to indicate that the code has been copied
         copyButton.innerHTML = "copied!";
         setTimeout(() => {
           copyButton.innerHTML = "copy";
         }, 1500);
       });
 
-      // Add the copy button to the code block
       codeBlock.parentNode.before(copyButton);
     });
   }
   setTimeout(function () {
     addCopyButtonToCodeBlocks();
   }, 100);
+</script>
+
+<!-- Custom text formatting script for + symbols + -->
+<script defer>
+document.addEventListener("DOMContentLoaded", function() {
+    function replaceSymbolsWithFormatting(node) {
+        // Skip if node is within a pre or code element
+        if (node.parentNode && (
+            node.parentNode.nodeName === 'PRE' || 
+            node.parentNode.nodeName === 'CODE' ||
+            node.parentNode.closest('pre') || 
+            node.parentNode.closest('code')
+        )) {
+            return;
+        }
+
+        if (node.nodeType === 3) { // Text node
+            const text = node.nodeValue;
+            if (text.includes('+') && text.indexOf('+') !== text.lastIndexOf('+')) {
+                const newText = text.replace(/\+([^+]+)\+/g, '<span class="highlight">$1</span>');
+                const span = document.createElement('span');
+                span.innerHTML = newText;
+                node.parentNode.replaceChild(span, node);
+            }
+        } else if (node.nodeType === 1 && !['SCRIPT', 'STYLE', 'TEXTAREA'].includes(node.tagName)) {
+            Array.from(node.childNodes).forEach(replaceSymbolsWithFormatting);
+        }
+    }
+
+    Array.from(document.body.childNodes).forEach(replaceSymbolsWithFormatting);
+});
 </script>

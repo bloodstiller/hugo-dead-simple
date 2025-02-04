@@ -9,13 +9,14 @@
 
 .highlight div,
 pre {
-  background-color: var(--code-background);
+  background-color: #45465a;
   padding: 0.7em;
   overflow-x: auto;
   margin: 0px;
-  border: 1px solid var(--code-border);
-  border-radius: 3px 0 3px 3px;
+  border: 1px solid transparent;
+  border-radius: 3px;
   line-height: 1.3;
+  color: #f8f8f2;
 }
 
 .highlight {
@@ -26,33 +27,30 @@ pre {
   border: 0px;
   padding: 0px 5px;
   margin: 0px;
-  box-shadow: 0px 0px 0px;
+  box-shadow: none;
 }
 
 code {
   font-family: 'Source Code Pro', monospace;
-  color: var(--code);
-
-  /* For Iosevka */
-  /* font-stretch: expanded; */
+  color: #85e685;
   font-stretch: normal;
-
-  background: var(--code-background);
-  border-radius: 5%;
-  padding: 1px 4px;
-  border: 1px solid var(--code-border);
+  background: #45465a;
+  border-radius: 10px;
+  overflow: auto;
+  border: none;
   font-size: 0.920em;
+  padding: 0.2em 0.4em;
 }
 
 pre code {
   font-size: 0.900em;
   font-stretch: normal;
-
   border: none;
   background: none;
   padding: 0;
   margin: 0px;
   tab-size: 4;
+  color: #f8f8f2;
 }
 
 @media screen and (max-width: 760px) {
@@ -97,15 +95,26 @@ pre code {
 }
 
 .hl {
-  background-color: var(--code-hl);
+  background-color: #5a5a5a;
   outline-style: solid;
-  outline-color: var(--code-hl);
+  outline-color: #5a5a5a;
   outline-width: 0.5px;
 }
 
 /* Copy code button */
 .copy-code-button {
-  display: none;
+  color: rgba(238, 255, 255, 0.4);
+  background-color: transparent;
+  border: rgba(238, 255, 255, 0.4) solid 1pt;
+  border-radius: 10%;
+  cursor: pointer;
+  padding: 0.7em;
+  font-size: 14px;
+}
+
+.copy-code-button:hover {
+  color: #eeffff;
+  border-color: #eeffff;
 }
 
 @media screen and (min-width: 760px) {

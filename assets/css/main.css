@@ -1,79 +1,106 @@
 :root {
   --complimentary: #815205;
-  --text: black;
-  --code: black;
-  --text-dim: #444;
-  --link: #3366cc;
-  --link-visited: #795cb2;
-  --code-background: #f3f5f7;
-  --code-border: #eaecf0;
+  --text: #f8f8f2;
+  --code: #85e685;
+  --text-dim: #939bab;
+  --link: #4398e5;
+  --link-visited: #7fb8ee;
+  --code-background: #45465a;
   --code-border: transparent;
-  --code-hl: #e6e6e6;
-  --border-general: #cccfd4;
-  --table-th: #e1e5ea;
-  --table-tr: #edeff2;
-  --toc-background: #f9f9f9;
-  --toc-border: #aaa;
+  --code-hl: #5a5a5a;
+  --border-general: #5c5e60;
+  --table-th: #45465a;
+  --table-tr: #282c34;
+  --toc-background: #282c34;
+  --toc-border: #3b3b3b;
+  --tag-background: #45465a;
+  --tag-text: #f8f8f2;
+  --tag-hover-background: #5a5b73;
+  --tag-hover-text: #ffffff;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --complimentary: #815205;
-    --text: #d8d8d8;
-    --code: #cbcbcb;
-    --text-dim: #a7a7a7;
-    /* --link: #8cb4ff; */
-    --link: #88a9e9;
-    --link-visited: #a390ca;
-    --code-background: #272727;
-    --code-border: transparent;
-    --code-hl: #5a5a5a;
-    --border-general: #495057;
-    --table-th: #414141;
-    --table-tr: #343434;
-    --toc-background: #343434;
-    --toc-border: #495057;
-  }
-}
-
-#gitinfo-date {
-  color: var(--text-dim);
-  filter: opacity(40%);
-  font-style: italic;
-  font-size: 0.9em;
-  white-space: nowrap;
-}
-
-@media screen and (min-width: 760px) {
-  #gitinfo-date {
-    margin-left: 30px;
-  }
-}
-
-/* TODO: add iframe margins */
 
 /* HTML & BODY */
 html {
   color: var(--text);
-  /* set in header*/
-  /* background-color: var(--background); */
+  background-color: #282c34;
   scroll-behavior: smooth;
 }
 
 body {
+  background-color: #282c34;
   margin: auto;
   padding: 0em 1em 2em 1em;
-  font-family:
-    "Inter",
-    -apple-system,
-    BlinkMacSystemFont,
-    "Roboto",
-    Helvetica,
-    sans-serif;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, "Noto Sans", "Liberation Sans", sans-serif;
   line-height: 1.54;
   text-align: justify;
 }
 
+/* Sidebar styling */
+aside.sidebar {
+  height: 100%;
+  overflow-y: auto;
+  padding-right: 5px;
+  background-color: #282c34;
+}
+
+/* Sidebar scrollbar styling */
+aside.sidebar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: rgb(95, 94, 94);
+}
+
+aside.sidebar::-webkit-scrollbar-thumb {
+  background: rgb(139, 139, 139);
+  border-radius: 10pt;
+}
+
+/* Firefox scrollbar */
+aside.sidebar {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(139, 139, 139) rgb(95, 94, 94);
+}
+
+/* Table of Contents styling */
+#TableOfContents {
+  opacity: 0.8;
+  transition-duration: 1s;
+  background-color: #282c34;
+}
+
+#TableOfContents:hover {
+  opacity: 1;
+}
+
+#TableOfContents a {
+  color: #939bab;
+}
+
+#TableOfContents a:hover {
+  color: #f8f8f2;
+  text-decoration: none;
+}
+
+/* Custom text formatting */
+span.underline-bold {
+  color: #FF3D2B !important;
+  font-size: 0.8rem !important;
+  font-weight: bold !important;
+  text-shadow:
+      -1px -1px 0 black,
+      1px -1px 0 black,
+      -1px 1px 0 black,
+      1px 1px 0 black !important;
+  display: inline-block !important;
+  padding: 0 2px !important;
+}
+
+span.underline-bold:hover {
+  color: #ff6b5b !important;
+}
+
+/* Media queries */
 @media screen and (min-width: 760px) {
   body {
     margin: auto;
@@ -86,132 +113,87 @@ body {
     margin: auto;
     max-width: 62vw;
   }
+  
+  #tableOfContentContainer {
+    position: fixed;
+    left: 20px;
+    top: 46px;
+    max-width: 15vw;
+    width: 15vw;
+    background-color: #282c34;
+  }
 }
 
-main {
-  hyphens: none;
+/* Add styles for tags */
+.post-tags {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
 }
 
-/* BASIC HTML ELEMENTS */
-p {
-  margin: 0.7em 0;
-}
-
-h1 {
-  font-weight: normal;
-  margin-bottom: 0px;
-  font-size: 2em;
-  margin-top: 0;
-}
-
-h2 {
-  border-bottom: 1px solid;
-  border-color: var(--text-dim);
-  margin-bottom: 0.5em;
-  margin-top: 1.2em;
-  font-weight: normal;
-  font-size: 1.65em;
-}
-
-h3 {
-  font-size: 1.3em;
-  font-weight: 700;
-  margin-bottom: 0.5em;
-  margin-top: 1.2em;
-  padding-bottom: 0;
-}
-
-h4 {
-  font-size: 1.1em;
-  margin-bottom: 0;
-  padding-bottom: 0;
-  font-style: oblique;
-  font-weight: normal;
-}
-
-a {
+.post-tag {
+  display: inline-block;
+  background-color: var(--tag-background);
+  color: var(--tag-text);
+  padding: 0.2em 0.6em;
+  border-radius: 3px;
+  font-size: 0.9em;
   text-decoration: none;
-  color: var(--link);
+  transition: background-color 0.2s ease;
 }
 
-a:hover {
-  text-decoration: underline;
+.post-tag:hover {
+  background-color: var(--tag-hover-background);
+  color: var(--tag-hover-text);
+  text-decoration: none;
 }
 
-a:visited {
-  color: var(--link-visited);
-}
-
-hr {
-  border-style: dashed;
+/* Style for tag count */
+.post-tag .tag-count {
+  margin-left: 0.3em;
   color: var(--text-dim);
 }
 
-blockquote {
-  border-left: 0.3rem solid var(--complimentary);
-  font-style: oblique;
-  margin: 1.6rem 0;
-  padding: 0 1.4rem 0 1rem;
-  line-height: 1.6;
+/* Ensure visited tags maintain their color */
+.post-tag:visited {
+  color: var(--tag-text);
 }
 
-blockquote p {
-  margin: 0;
+/* Add these rules after the :root section */
+a {
+  color: #4398e5;  /* Change this to your preferred color */
+  text-decoration: none;
 }
 
-details {
-  padding: 0 0 0 14px;
-  border-left: 2px dashed var(--border-general);
+a:visited {
+  color: #7A197A;  /* Change this to your preferred visited link color */
 }
 
-mark {
-  padding: 0 2px 0 2px;
+a:hover {
+  color: #7fb8ee;
+  text-decoration: underline;
 }
 
-ul {
-  padding-left: 2rem;
+
+@media (prefers-color-scheme: dark) {
+    .highlight:not(pre *):not(code *) {
+        color: #FF3D2B;
+        font-weight: bold;
+        text-shadow:
+            -1px -1px 0 black,
+            1px -1px 0 black,
+            -1px 1px 0 black,
+            1px 1px 0 black; /* Shadow color and position */
+    }
 }
 
-/* NOTE: fix for Inter font. */
-strong {
-  font-weight: 600;
-}
-
-/* NOTE: fix for Inter font. */
-th {
-  font-weight: 500;
-}
-
-/* MISC */
-.section-title {
-  border: 0;
-}
-
-.post-list {
-  color: var(--complimentary);
-  padding-left: 1em;
-}
-
-@media screen and (min-width: 760px) {
-  .post-list {
-    max-width: 60vw;
-  }
-}
-
-.bold-post-in-list {
-  font-weight: 600;
-}
-
-@media screen and (max-width: 760px) {
-  .katex {
-    font-size: 1.05em !important;
-  }
-}
-
-.footnotes {
-  margin-top: 60px;
-}
-
-.terms {
-  padding-left: 16px;
+/* Add specific override for code blocks */
+pre .highlight,
+code .highlight,
+.highlight pre,
+.highlight code {
+    color: inherit;
+    font-weight: inherit;
+    text-shadow: none;
 }

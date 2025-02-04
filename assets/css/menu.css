@@ -5,13 +5,20 @@
   margin-bottom: 10px;
 }
 
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 .menu li {
   display: inline-block;
+  margin-right: 1.1em;
 }
 
 .menu a {
-  margin-right: 1.1em;
   text-decoration: none;
+  color: var(--link);
   border-radius: 5px;
 }
 
@@ -21,5 +28,6 @@
 
 .menu a:hover {
   text-decoration: underline;
+  color: #7fb8ee;
 }
 

@@ -20,7 +20,7 @@
 }
 
 #single-meta a:visited {
-  color: var(--link);
+  color: #7fb8ee;
 }
 
 #subtitle {
@@ -42,9 +42,11 @@
 }
 
 #tags a {
+  color: #85e685;  /* Replace with your preferred color */
   filter: brightness(80%);
 }
 
 #tags a:visited {
+  color: #7A197A;  /* Same color as above */
   filter: brightness(80%);
 }
