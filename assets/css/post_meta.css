@@ -42,11 +42,11 @@
 }
 
 #tags a {
-  color: #85e685;  /* Replace with your preferred color */
-  filter: brightness(80%);
+  color: #98FB98;  
+  filter: brightness(100%);
 }
 
 #tags a:visited {
-  color: #7A197A;  /* Same color as above */
+  color: #85E685;  
   filter: brightness(80%);
 }
