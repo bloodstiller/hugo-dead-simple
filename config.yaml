@@ -21,12 +21,18 @@ menu:
     - name: "Cheatsheets"
       url: "/cheatsheets/"
       weight: 6
+    #- name: "Homelab"
+      #url: "/homelab/"
+      #weight: 7
+    - name: "Micro-blog"
+      url: "/micro-blog/"
+      weight: 8
     - name: "About Me"
       url: "/aboutme/"
-      weight: 7
+      weight: 9
     - name: "Tags"
       url: "/tags/"
-      weight: 8
+      weight: 10
 
 params:
   description: "Your site description"
