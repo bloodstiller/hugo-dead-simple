@@ -9,6 +9,8 @@
     
     <!-- Load JavaScript from static directory -->
     <script src="{{ "js/custom.js" | relURL }}" defer></script>
+
+    {{ partial "adsense-verification.html" . }}
 </head>
 <body>
     <!-- Debug info -->
@@ -42,4 +44,4 @@
     <!-- Also try direct inclusion -->
     <script src="{{ "js/custom.js" | relURL }}"></script>
 </body>
-</html> 
+</html>
