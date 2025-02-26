@@ -21,9 +21,9 @@ menu:
     - name: "Cheatsheets"
       url: "/cheatsheets/"
       weight: 6
-    #- name: "Homelab"
-      #url: "/homelab/"
-      #weight: 7
+    - name: "Homelab"
+      url: "/homelab/"
+      weight: 7
     - name: "Micro-blog"
       url: "/micro-blog/"
       weight: 8
