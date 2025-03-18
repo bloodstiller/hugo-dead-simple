@@ -178,7 +178,7 @@ a:hover {
 
 /* Style inline code elements */
 code:not(pre code) {
-  color: #ff6c6b;  /* Doom One red */
+  color: #a9a1e1;  /* Doom One violet - softer and more pleasant */
   background-color: var(--code-background);
   padding: 2px 4px;
   border-radius: 3px;
@@ -231,6 +231,211 @@ h6 {
 }
 
 strong, b {
-    color: #da8548;
-    font-weight: bold;
+    color: #dfdfdf;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+
+/* Blockquote styling */
+blockquote {
+    margin: 1.5em 0;
+    padding: 0.5em 1em;
+    border-left: 3px solid #51afef;
+    background-color: #2d333b;
+    color: var(--text);
+    font-style: italic;
+}
+
+blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+/* List styling */
+ul, ol {
+    padding-left: 1.5em;
+}
+
+ul li, ol li {
+    margin: 0.5em 0;
+    position: relative;
+}
+
+ul li::marker {
+    color: #51afef;
+}
+
+ol li::marker {
+    color: #c678dd;
+}
+
+/* Horizontal rule styling */
+hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #51afef,
+        transparent
+    );
+    margin: 2em 0;
+    opacity: 0.5;
+}
+
+/* Selection styling */
+::selection {
+    background-color: #2257A0;
+    color: #bbc2cf;
+}
+
+/* Smooth transitions for interactive elements */
+.post-tag,
+a,
+#TableOfContents a {
+    transition: all 0.2s ease-in-out;
+}
+
+/* Enhanced paragraph spacing */
+p {
+    margin: 1.2em 0;
+    line-height: 1.6;
+}
+
+/* Add subtle text shadow to headings */
+h1, h2, h3, h4, h5, h6 {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    margin-top: 1.5em;
+    margin-bottom: 0.8em;
+}
+
+/* Code block enhancements */
+pre {
+    padding: 1em;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin: 1.5em 0;
+}
+
+/* Image enhancements */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Table enhancements */
+table {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* Keyboard shortcuts styling */
+kbd {
+    background-color: #2d333b;
+    border: 1px solid #51afef;
+    border-radius: 3px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+    color: #bbc2cf;
+    display: inline-block;
+    font-size: 0.85em;
+    font-family: monospace;
+    line-height: 1;
+    padding: 2px 4px;
+    margin: 0 0.2em;
+}
+
+/* Important note styling */
+.note {
+    background-color: #2d333b;
+    border-left: 3px solid #98be65;
+    padding: 1em;
+    margin: 1.5em 0;
+    border-radius: 0 5px 5px 0;
+}
+
+.warning {
+    background-color: #2d333b;
+    border-left: 3px solid #ff6c6b;
+    padding: 1em;
+    margin: 1.5em 0;
+    border-radius: 0 5px 5px 0;
+}
+
+/* Footnotes styling */
+.footnotes {
+    border-top: 1px solid #51afef;
+    margin-top: 2em;
+    padding-top: 1em;
+}
+
+.footnotes ol {
+    color: var(--text-dim);
+}
+
+.footnote-ref {
+    color: #c678dd;
+    font-size: 0.8em;
+    text-decoration: none;
+    vertical-align: super;
+}
+
+.footnote-backref {
+    color: #51afef;
+    margin-left: 0.5em;
+}
+
+/* Enhanced blockquote */
+blockquote {
+    position: relative;
+}
+
+blockquote::before {
+    content: """;
+    position: absolute;
+    left: -0.6em;
+    top: -0.2em;
+    font-size: 2em;
+    color: #51afef;
+    opacity: 0.5;
+}
+
+/* Enhance pre blocks with a subtle border */
+pre {
+    border: 1px solid rgba(81, 175, 239, 0.2);
+}
+
+/* Add subtle hover effect to images */
+img {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+img:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Enhanced table header */
+th {
+    border-bottom: 2px solid #51afef;
+    background-color: #2d333b;
+}
+
+/* Add a subtle line between table rows */
+tr:not(:last-child) {
+    border-bottom: 1px solid rgba(81, 175, 239, 0.1);
+}
+
+/* Enhance link hover effect */
+a:hover {
+    text-decoration: none;
+    background: linear-gradient(transparent 70%, rgba(81, 175, 239, 0.2) 0);
+}
+
+/* Style abbreviations */
+abbr {
+    color: #c678dd;
+    cursor: help;
+    border-bottom: 1px dotted #51afef;
 }
