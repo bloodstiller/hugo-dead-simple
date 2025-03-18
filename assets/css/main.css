@@ -1,22 +1,22 @@
 :root {
   --complimentary: #815205;
-  --text: #f8f8f2;
-  --code: #85e685;
-  --text-dim: #939bab;
-  --link: #4398e5;
-  --link-visited: #7fb8ee;
-  --code-background: #45465a;
+  --text: #bbc2cf;
+  --code: #98be65;
+  --text-dim: #5B6268;
+  --link: #51afef;
+  --link-visited: #c678dd;
+  --code-background: #23272e;
   --code-border: transparent;
-  --code-hl: #5a5a5a;
+  --code-hl: #2257A0;
   --border-general: #5c5e60;
-  --table-th: #45465a;
+  --table-th: #23272e;
   --table-tr: #282c34;
   --toc-background: #282c34;
   --toc-border: #3b3b3b;
-  --tag-background: #45465a;
-  --tag-text: #f8f8f2;
-  --tag-hover-background: #5a5b73;
-  --tag-hover-text: #ffffff;
+  --tag-background: #23272e;
+  --tag-text: #51afef;
+  --tag-hover-background: #2257A0;
+  --tag-hover-text: #bbc2cf;
 }
 
 /* HTML & BODY */
@@ -160,25 +160,33 @@ span.underline-bold:hover {
   color: var(--tag-text);
 }
 
-/* Add these rules after the :root section */
+/* Update link styles to use CSS variables */
 a {
-  color: #4398e5;  /* Change this to your preferred color */
+  color: var(--link);
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 a:visited {
-  color: #7fb8ee;  /* Change this to your preferred visited link color */
+  color: var(--link-visited);
 }
 
 a:hover {
-  color: #7fb8ee;
+  color: var(--link);
   text-decoration: underline;
 }
 
+/* Style inline code elements */
+code:not(pre code) {
+  color: #ff6c6b;  /* Doom One red */
+  background-color: var(--code-background);
+  padding: 2px 4px;
+  border-radius: 3px;
+}
 
 @media (prefers-color-scheme: dark) {
     .highlight:not(pre *):not(code *) {
-        color: #FF3D2B;
+        color: #ff6c6b;
         font-weight: bold;
         text-shadow:
             -1px -1px 0 black,
@@ -196,4 +204,33 @@ code .highlight,
     color: inherit;
     font-weight: inherit;
     text-shadow: none;
+}
+
+h1 {
+    color: #51afef;
+}
+
+h2 {
+    color: #c678dd;
+}
+
+h3 {
+    color: #98be65;
+}
+
+h4 {
+    color: #51afef;
+}
+
+h5 {
+    color: #c678dd;
+}
+
+h6 {
+    color: #98be65;
+}
+
+strong, b {
+    color: #da8548;
+    font-weight: bold;
 }
