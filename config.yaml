@@ -12,6 +12,9 @@ menu:
     - name: "Walkthroughs"
       url: "/walkthroughs/"
       weight: 2
+    - name: "Sherlocks"
+      url: "/sherlocks/"
+      weight: 3
     - name: "Articles"
       url: "/articles/"
       weight: 4

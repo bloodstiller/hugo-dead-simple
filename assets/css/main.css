@@ -46,20 +46,24 @@ aside.sidebar {
 
 /* Sidebar scrollbar styling */
 aside.sidebar::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-  background-color: rgb(95, 94, 94);
+  width: 6px !important;
+  height: 6px !important;
+  background-color: var(--code-background) !important;
 }
 
 aside.sidebar::-webkit-scrollbar-thumb {
-  background: rgb(139, 139, 139);
-  border-radius: 10pt;
+  background: var(--border-general) !important;
+  border-radius: 4px !important;
+}
+
+aside.sidebar::-webkit-scrollbar-thumb:hover {
+  background: var(--text-dim) !important;
 }
 
 /* Firefox scrollbar */
 aside.sidebar {
-  scrollbar-width: thin;
-  scrollbar-color: rgb(139, 139, 139) rgb(95, 94, 94);
+  scrollbar-width: thin !important;
+  scrollbar-color: var(--border-general) var(--code-background) !important;
 }
 
 /* Table of Contents styling */
@@ -438,4 +442,31 @@ abbr {
     color: #c678dd;
     cursor: help;
     border-bottom: 1px dotted #51afef;
+}
+
+/* Global scrollbar styling */
+html, body, aside.sidebar {
+  scrollbar-width: thin !important;
+  scrollbar-color: #333842 #282c34 !important;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+aside.sidebar::-webkit-scrollbar {
+  width: 6px !important;
+  height: 6px !important;
+  background-color: #282c34 !important;
+}
+
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb,
+aside.sidebar::-webkit-scrollbar-thumb {
+  background: #333842 !important;
+  border-radius: 4px !important;
+}
+
+html::-webkit-scrollbar-thumb:hover,
+body::-webkit-scrollbar-thumb:hover,
+aside.sidebar::-webkit-scrollbar-thumb:hover {
+  background: #3e434d !important;
 }
